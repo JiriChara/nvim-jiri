@@ -63,3 +63,7 @@ opt.wrap = false
 
 -- Use a single global status line
 opt.laststatus = 3
+
+-- Tab/EOL characters
+opt.list = true
+opt.listchars = { tab = "▸ ", eol = "¬" }
