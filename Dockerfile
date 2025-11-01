@@ -7,6 +7,8 @@ RUN apk add --no-cache \
     make \
     gcc \
     g++ \
+    ncurses-dev \
+    ncurses-terminfo-base \
     bash \
     curl \
     git \
