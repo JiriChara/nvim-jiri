@@ -16,10 +16,10 @@ Test your Neovim setup in a clean Alpine Linux environment:
 
 ```
 # Build the container
-docker-compose up --build
+docker-compose build
 
 # Start Neovim interactively
-docker-compose run --rm nvim
+docker-compose run --rm nvim nvim
 ```
 
 Your local `./nvim/init.lua` is mounted into the container at `/root/.config/nvim/init.lua`, so changes on your host are instantly applied.
