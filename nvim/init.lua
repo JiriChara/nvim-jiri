@@ -7,5 +7,5 @@ vim.g.maplocalleader = "\\"
 require("config.options")
 require("config.globals")
 require("config.keymaps")
--- require("config.autocmds")
+require("config.autocmds")
 -- require("config.plugins")
