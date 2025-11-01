@@ -31,3 +31,13 @@ vim.api.nvim_create_autocmd("BufWritePre", {
   end,
   desc = "Trim trailing whitespace on save",
 })
+
+-- Disable cursorcolumn in certain file types
+vim.api.nvim_create_autocmd("FileType", {
+  group = group,
+  pattern = { "nerdtree", "help", "checkhealth" },
+  callback = function()
+    vim.wo.cursorcolumn = false
+  end,
+  desc = "Disable cursorcolumn in problematic file types",
+})
