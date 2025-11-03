@@ -19,10 +19,18 @@ Test your Neovim setup in a clean Alpine Linux environment:
 docker-compose build
 
 # Start Neovim interactively
-docker-compose run --rm nvim nvim
+docker-compose run --rm nvim
 ```
 
 Your local `./nvim/init.lua` is mounted into the container at `/root/.config/nvim/init.lua`, so changes on your host are instantly applied.
+
+⚠️ WARNING <C-p> + <C-q> in Docker is reserved as the default sequence for detaching a container. As a result, the <C-p> command to open the fuzzy finder won’t work unless you change the detach keys in ~/.docker/config.json:
+
+```
+{
+  "detachKeys": "ctrl-q,ctrl-q"
+}
+```
 
 ## 📦 Plugin Management with lazy.nvim
 
@@ -39,11 +47,22 @@ You can open the plugin manager inside Neovim with:
 ## 📁 Project Structure
 
 ```
-nvim-docker/
-├── Dockerfile
+.
 ├── docker-compose.yml
-└── nvim/
-    └── init.lua
+├── Dockerfile
+├── LICENSE
+├── nvim
+│   ├── init.lua
+│   ├── lazy-lock.json
+│   └── lua
+│       └── config
+│           ├── autocmds.lua
+│           ├── globals.lua
+│           ├── keymaps.lua
+│           ├── lazy.lua
+│           ├── options.lua
+│           └── plugins.lua
+└── README.md
 ```
 
 ## 🧹 Cleanup

@@ -10,24 +10,29 @@ return {
 
   -- File / System Navigation
   {
-    "nvim-tree/nvim-tree.lua",
-    dependencies = { "nvim-tree/nvim-web-devicons" },
+    'nvim-tree/nvim-tree.lua',
+    dependencies = { 'nvim-tree/nvim-web-devicons' },
     config = function()
-      require("nvim-tree").setup()
+      require('nvim-tree').setup()
     end
+  },
+  {
+    'nvim-telescope/telescope.nvim',
+    tag = '0.1.8',
+    dependencies = { 'nvim-lua/plenary.nvim' },
   },
 
   -- Display Keybindings in Popup
   {
-    "folke/which-key.nvim",
-    event = "VeryLazy",
+    'folke/which-key.nvim',
+    event = 'VeryLazy',
     keys = {
       {
-        "<leader>?",
+        '<leader>?',
         function()
-          require("which-key").show({ global = true })
+          require('which-key').show({ global = true })
         end,
-        desc = "Buffer Local Keymaps (which-key)",
+        desc = 'Buffer Local Keymaps (which-key)'
       },
     },
   }
