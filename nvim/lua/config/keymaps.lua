@@ -15,3 +15,6 @@ map("n", "<A-Left>", "<cmd>vertical resize -2<cr>", o)
 map("n", "<A-Right>", "<cmd>vertical resize +2<cr>", o)
 map("n", "<A-Up>", "<cmd>resize +1<cr>", o)
 map("n", "<A-Down>", "<cmd>resize -1<cr>", o)
+
+-- Tree Navigator
+map("n", "<C-n>", "<cmd>NvimTreeToggle<cr>", o)
