@@ -19,7 +19,8 @@ RUN apk add --no-cache \
     nodejs \
     npm \
     python3 \
-    py3-pip
+    py3-pip \
+    fd
 
 # Make Node/Python/Ruby providers working
 RUN npm install -g neovim
